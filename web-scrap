@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#list of urls
+urls=(
+)
+
+output="default.txt"
+csselector="div.userContent"
+
+for url in ${urls[*]};
+do
+echo $url |
+   wget -O- -i- --user-agent="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0" |
+   hxnormalize -x |
+   hxselect -i $csselector |
+   lynx -stdin -dump >> $output
+done

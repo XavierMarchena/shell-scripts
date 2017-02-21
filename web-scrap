@@ -1,4 +1,5 @@
 #!/bin/bash
+#based on http://www.joyofdata.de/blog/using-linux-shell-web-scraping/
 
 #list of urls
 urls=(
